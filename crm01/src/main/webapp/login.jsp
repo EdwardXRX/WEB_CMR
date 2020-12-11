@@ -44,12 +44,12 @@
 				return false;
             }
 
+            //登录验证的ajax
             $.ajax({
 				url : "settings/user/login.do",
 				data : {
 					"loginAct" : loginAct,
 					"loginPwd" : loginPwd
-
 				},
 				type : "post",
 				dataType : "json",

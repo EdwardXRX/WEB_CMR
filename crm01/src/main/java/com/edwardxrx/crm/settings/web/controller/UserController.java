@@ -83,7 +83,7 @@ public class UserController extends HttpServlet {
         }catch (Exception e)
         {
             e.printStackTrace();
-            //直接宝座
+            //直接报错
 
             String msg = e.getMessage();
             System.out.println("-----------msg"+msg);
@@ -98,6 +98,7 @@ public class UserController extends HttpServlet {
             Map<String,Object> map = new HashMap<String,Object>();
             map.put("success",false);
             map.put("msg",msg);
+            PrintJson.printJsonObj(response,map);
 
         }
 
