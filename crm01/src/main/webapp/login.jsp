@@ -14,6 +14,11 @@
     <script>
         $(function () {
 
+            if(window.top!=window){
+                window.top.location=window.location;
+            }
+
+
             $("#loginAct").val("");
             //登录页面第一时间，账号输入框获得焦点
             $("#loginAct").focus();

@@ -8,6 +8,7 @@ import com.edwardxrx.crm.utils.DateTimeUtil;
 import com.edwardxrx.crm.utils.SqlSessionUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -66,5 +67,12 @@ public class UserServiceImpl implements UserService {
         //如果程序成功执行到本行
         //说明账号密码正常
         return user;
+    }
+
+    @Override
+    public List<User> getUserList() {
+
+        List<User> userList = userDao.getUserList();
+        return userList;
     }
 }
