@@ -49,6 +49,9 @@
 
                         $("#create-marketActivityOwner").html(html);
 
+                        var id = "${user.id}";
+                        $("#create-marketActivityOwner").val(id);
+
                         //所有下拉条处理完之后，就可以打开模态窗口勒
                         $("#createActivityModal").modal("show");
 
