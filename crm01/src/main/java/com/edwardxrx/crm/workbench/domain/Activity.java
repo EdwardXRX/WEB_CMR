@@ -11,8 +11,8 @@ package com.edwardxrx.crm.workbench.domain;
  */
 public class Activity {
     private String id;   //主键
-    private String OWNER;           //外键    tbl_user
-    private String NAME;      //市场活动名称
+    private String owner;           //外键    tbl_user
+    private String name;      //市场活动名称
     private String startDate;       //开始时间
     private String endDate;         //结束时间    年月日
     private String cost;            //成本
@@ -30,20 +30,20 @@ public class Activity {
         this.id = id;
     }
 
-    public String getOWNER() {
-        return OWNER;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setOWNER(String OWNER) {
-        this.OWNER = OWNER;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
-    public String getNAME() {
-        return NAME;
+    public String getName() {
+        return name;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStartDate() {

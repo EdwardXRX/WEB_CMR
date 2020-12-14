@@ -1,5 +1,7 @@
 package com.edwardxrx.crm.workbench.dao;
 
+import com.edwardxrx.crm.workbench.domain.Activity;
+
 /**
  * @ProjectName: WEB_CMR
  * @Package: com.edwardxrx.crm.workbench.dao
@@ -10,4 +12,5 @@ package com.edwardxrx.crm.workbench.dao;
  * @Version: 1.0
  */
 public interface ActivityDao {
+    int save(Activity a);
 }

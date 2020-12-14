@@ -1,5 +1,7 @@
 package com.edwardxrx.crm.workbench.service;
 
+import com.edwardxrx.crm.workbench.domain.Activity;
+
 /**
  * @ProjectName: WEB_CMR
  * @Package: com.edwardxrx.crm.workbench.service
@@ -10,4 +12,6 @@ package com.edwardxrx.crm.workbench.service;
  * @Version: 1.0
  */
 public interface ActivityService {
+    boolean save(Activity a);
+
 }
