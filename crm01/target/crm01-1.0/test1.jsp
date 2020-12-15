@@ -16,6 +16,12 @@
 </head>
 <body>
 
+
+<%--
+
+4. log4j.logger.org.mybatis.example.BlogMapper=TRACE
+
+--%>
                 $.ajax({
                 url : "",
                 data : {

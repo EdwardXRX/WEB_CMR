@@ -1,6 +1,9 @@
 package com.edwardxrx.crm.workbench.service;
 
+import com.edwardxrx.crm.vo.PaginationVO;
 import com.edwardxrx.crm.workbench.domain.Activity;
+
+import java.util.Map;
 
 /**
  * @ProjectName: WEB_CMR
@@ -14,4 +17,5 @@ import com.edwardxrx.crm.workbench.domain.Activity;
 public interface ActivityService {
     boolean save(Activity a);
 
+    PaginationVO<Activity> pageList(Map<String, Object> map);
 }
