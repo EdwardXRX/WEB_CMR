@@ -10,17 +10,17 @@ package com.edwardxrx.crm.workbench.domain;
  * @Version: 1.0
  */
 public class Activity {
-    private String id;   //主键
-    private String owner;           //外键    tbl_user
-    private String name;      //市场活动名称
-    private String startDate;       //开始时间
-    private String endDate;         //结束时间    年月日
-    private String cost;            //成本
-    private String description;        //描述
-    private String createTime;      //创建时间
-    private String createBy;        //创建人
-    private String editTime;        //结束时间
-    private String editBy;         //结束人       年月日时分秒
+    private String id;
+    private String owner;
+    private String name;
+    private String startDate;
+    private String endDate;
+    private String cost;
+    private String description;
+    private String createTime;
+    private String createBy;
+    private String editTime;
+    private String editBy;
 
     public String getId() {
         return id;

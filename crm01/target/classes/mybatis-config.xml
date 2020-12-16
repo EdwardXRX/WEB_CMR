@@ -9,7 +9,8 @@
   <typeAliases>
   
   	<package name="com/edwardxrx/crm/settings/domain"/>
-  	
+  	<package name="com/edwardxrx/crm/workbench/domain"/>
+
   
   </typeAliases>
   
@@ -29,7 +30,7 @@
   <mappers>
    
       <package name="com/edwardxrx/crm/settings/dao"/>
-      <package name="com.edwardxrx.crm.workbench.dao"/>
+      <package name="com/edwardxrx/crm/workbench/dao"/>
 
   </mappers>
 </configuration>
