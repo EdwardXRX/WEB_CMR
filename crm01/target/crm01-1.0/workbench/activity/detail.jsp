@@ -56,6 +56,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 			$(this).children("span").css("color","#E6E6E6");
 		});
 
+
 		showRemarkList();
 
         $("#remarkBody").on("mouseover",".remarkDiv",function(){

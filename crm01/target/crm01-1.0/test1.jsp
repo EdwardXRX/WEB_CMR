@@ -28,7 +28,7 @@
 
                 },
                 type : "",
-                dataType : "",
+                dataType : "json",
                 success : function (data) {
 
                 }

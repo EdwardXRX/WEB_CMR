@@ -7,6 +7,9 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+
+
+
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>com.edwardxrx.crm.web.filter.EncodingFilter</filter-class>
@@ -29,6 +32,11 @@
         <url-pattern>*.jsp</url-pattern>
     </filter-mapping>
 
+    <!--监听器-->
+    <listener>
+        <listener-class>com.edwardxrx.crm.web.listener.SysInitListener</listener-class>
+    </listener>
+
     <!--用户登录控制器-->
     <servlet>
         <servlet-name>UserController</servlet-name>
@@ -38,6 +46,20 @@
     <servlet-mapping>
         <servlet-name>UserController</servlet-name>
         <url-pattern>/settings/user/login.do</url-pattern>
+    </servlet-mapping>
+
+
+    <!--线索控制区-->
+    <servlet>
+        <servlet-name>ClueController</servlet-name>
+        <servlet-class>com.edwardxrx.crm.workbench.web.controller.ClueController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClueController</servlet-name>
+        <url-pattern>/workbench/clue/getUserList.do</url-pattern>
+        <url-pattern>/workbench/clue/save.do</url-pattern>
+        <url-pattern>/workbench/clue/detail.do</url-pattern>
     </servlet-mapping>
 
 
