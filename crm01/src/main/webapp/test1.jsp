@@ -34,10 +34,20 @@
                 }
 
 })
-
+                String id = UUIDUtil.getUUID();
                 String createTime = DateTimeUtil.getSysTime();
                 //创建人：当前登录用户
                 String createBy = ((User)request.getSession().getAttribute("user")).getName();
+
+
+                $(".time").datetimepicker({
+                minView: "month",
+                language: 'zh-CN',
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayBtn: true,
+                pickerPosition: "bottom-left"
+                });
 
 </body>
 </html>

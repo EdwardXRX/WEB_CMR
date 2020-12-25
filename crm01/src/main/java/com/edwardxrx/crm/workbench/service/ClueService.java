@@ -2,6 +2,11 @@ package com.edwardxrx.crm.workbench.service;
 
 import com.edwardxrx.crm.workbench.domain.Activity;
 import com.edwardxrx.crm.workbench.domain.Clue;
+import com.edwardxrx.crm.workbench.domain.Tran;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ProjectName: WEB_CMR
@@ -17,4 +22,11 @@ public interface ClueService {
 
     Clue detail(String id);
 
+    boolean unbund(String id);
+
+
+    boolean bundActivity(List<Map<String, String>> list);
+
+
+    boolean convert(String clueId, Tran t, String createBy);
 }

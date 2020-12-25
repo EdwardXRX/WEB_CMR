@@ -229,10 +229,10 @@
 
             })
 
+            //勾选了全选，则所有的选项都自动选中
             $("#qx").click(function () {
 
                 $("input[name=xz]").prop("checked", this.checked);
-
 
             });
 
@@ -275,8 +275,7 @@
                         }
                     }
 
-                    //没问题
-                    alert(param);
+
 
                     $.ajax({
                         url: "workbench/activity/delete.do",

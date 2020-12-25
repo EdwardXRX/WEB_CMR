@@ -267,12 +267,6 @@ public class ActivityController extends HttpServlet {
 
         String ids[] = request.getParameterValues("id");
 
-        if(ids == null)
-            System.out.println("1111111");
-        else
-            System.out.println("2222222");
-
-
 
         ActivityService as = (ActivityService) ServiceFactory.getService(new ActivityServiceImpl());
 

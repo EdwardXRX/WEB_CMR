@@ -60,8 +60,25 @@
         <url-pattern>/workbench/clue/getUserList.do</url-pattern>
         <url-pattern>/workbench/clue/save.do</url-pattern>
         <url-pattern>/workbench/clue/detail.do</url-pattern>
+        <url-pattern>/workbench/clue/getActivityListByClueId.do</url-pattern>
+        <url-pattern>/workbench/clue/unbund.do</url-pattern>
+        <url-pattern>/workbench/clue/getActivityListByNameAndNotByClueId.do</url-pattern>
+        <url-pattern>/workbench/clue/bundActivity.do</url-pattern>
+        <url-pattern>/workbench/clue/getActivityListByName.do</url-pattern>
+        <url-pattern>/workbench/clue/convert.do</url-pattern>
     </servlet-mapping>
 
+
+    <!--交易控制区-->
+    <servlet>
+        <servlet-name>TranController</servlet-name>
+        <servlet-class>com.edwardxrx.crm.workbench.web.controller.TranController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TranController</servlet-name>
+        <url-pattern>/workbench/transaction/add.do</url-pattern>
+        <url-pattern>/workbench/transaction/getCustomerName.do</url-pattern>
+    </servlet-mapping>
 
     <!--市场活动控制区-->
     <servlet>
