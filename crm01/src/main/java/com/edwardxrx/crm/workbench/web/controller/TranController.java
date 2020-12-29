@@ -14,7 +14,7 @@ import com.edwardxrx.crm.workbench.service.CustomerService;
 import com.edwardxrx.crm.workbench.service.TranService;
 import com.edwardxrx.crm.workbench.service.imple.CustomerServiceImpl;
 import com.edwardxrx.crm.workbench.service.imple.TranServiceImpl;
-import sun.plugin2.gluegen.runtime.StructAccessor;
+//import sun.plugin2.gluegen.runtime.StructAccessor;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
