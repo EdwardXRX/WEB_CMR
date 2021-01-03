@@ -80,9 +80,6 @@ public class TranController extends HttpServlet {
 
         Map<String,Object> map = ts.getCharts();
 
-        if(map == null)
-            System.out.println("空1");
-
         PrintJson.printJsonObj(response,map);
 
 

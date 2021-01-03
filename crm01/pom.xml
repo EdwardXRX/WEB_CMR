@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.edwardxrx</groupId>
-    <artifactId>crm01</artifactId>
-    <version>1.0</version>
+    <artifactId>crm02</artifactId>
+    <version>1</version>
     <packaging>war</packaging>
 
     <properties>
@@ -95,7 +95,13 @@
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
-                <filtering>false</filtering>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
             </resource>
         </resources>
     </build>

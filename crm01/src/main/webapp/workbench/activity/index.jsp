@@ -37,9 +37,6 @@
                     });
 
 
-
-
-
                     $.ajax({
                         url: "workbench/activity/getUserList.do",
                         type: "get",
@@ -218,6 +215,7 @@
             //局部刷新
             //默认展开页表的第一页，每一页两条记录
             pageList(1, 2);
+
             $("#searchBtn").click(function () {
 
                 $("#hidden-name").val($.trim($("#search-name").val()));
@@ -276,7 +274,6 @@
                     }
 
 
-
                     $.ajax({
                         url: "workbench/activity/delete.do",
                         data: param,
@@ -285,7 +282,7 @@
                         success: function (data) {
                             if (data.success) {
 
-                                pageList(1,$("#activityPage").bs_pagination('getOption', 'rowsPerPage'));
+                                pageList(1, $("#activityPage").bs_pagination('getOption', 'rowsPerPage'));
                             } else {
                                 //删除失败
                                 alert("删除失败")
@@ -357,7 +354,7 @@
                         /*需要转义*/
                         //    \' :这就是转义
                         //<td><a style="text-decoration: none; cursor: pointer;"onclick="window.location.href='workbench/activity/detail.jsp';">发传单</a></td>
-                        html += '<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href=\'workbench/activity/detail.do?id='+n.id+'\';">' + n.name + '</a></td>';
+                        html += '<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href=\'workbench/activity/detail.do?id=' + n.id + '\';">' + n.name + '</a></td>';
                         html += '<td>' + n.owner + '</td>';
                         html += '<td>' + n.startDate + '</td>';
                         html += '<td>' + n.endDate + '</td>';

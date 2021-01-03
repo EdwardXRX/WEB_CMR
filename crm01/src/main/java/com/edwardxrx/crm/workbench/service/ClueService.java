@@ -1,5 +1,6 @@
 package com.edwardxrx.crm.workbench.service;
 
+import com.edwardxrx.crm.vo.PaginationVO;
 import com.edwardxrx.crm.workbench.domain.Activity;
 import com.edwardxrx.crm.workbench.domain.Clue;
 import com.edwardxrx.crm.workbench.domain.Tran;
@@ -29,4 +30,6 @@ public interface ClueService {
 
 
     boolean convert(String clueId, Tran t, String createBy);
+
+    PaginationVO<Clue> pageList(Map<String, Object> map);
 }

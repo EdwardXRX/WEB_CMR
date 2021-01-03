@@ -4,6 +4,7 @@ import com.edwardxrx.crm.settings.domain.User;
 import com.edwardxrx.crm.settings.service.UserService;
 import com.edwardxrx.crm.settings.service.impl.UserServiceImpl;
 import com.edwardxrx.crm.utils.*;
+import com.edwardxrx.crm.vo.PaginationVO;
 import com.edwardxrx.crm.workbench.domain.Activity;
 import com.edwardxrx.crm.workbench.domain.Clue;
 import com.edwardxrx.crm.workbench.domain.Tran;
@@ -73,7 +74,76 @@ public class ClueController extends HttpServlet {
         }else if("/workbench/clue/convert.do".equals(path))
         {
             convert(request,response);
+        }else if("/workbench/clue/pageList.do".equals(path))
+        {
+            pageList(request,response);
         }
+
+    }
+
+    private void pageList(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("进入到查询线索信息的列表的操作（结合条件查询+分页查询）");
+
+        String fullname = request.getParameter("fullname");
+        String company = request.getParameter("company");
+        String owner = request.getParameter("owner");
+        String source = request.getParameter("source");
+        String state = request.getParameter("state");
+        String phone = request.getParameter("phone");
+        String mphone = request.getParameter("mphone");
+        String pageNostr = request.getParameter("pageNo");
+        System.out.println("-----------------------");
+
+        System.out.println("fullname:"+fullname);
+        System.out.println("company:"+company);
+        System.out.println("owner:"+owner);
+        System.out.println("source:"+source);
+        System.out.println("state:"+state);
+        System.out.println("phone:"+phone);
+        System.out.println("mphone:"+mphone);
+
+        System.out.println("-----------------------");
+
+
+        //计算略过的数量
+        int pageNo = Integer.valueOf(pageNostr);
+
+        System.out.println("pageNo:" + pageNo);
+
+        String pageSizestr = request.getParameter("pageSize");
+
+
+        //每页的数字
+        int pageSize = Integer.valueOf(pageSizestr);
+
+        System.out.println("pageSize:" + pageSize);
+
+        //这是应用在sql语句中的
+        //sql语句，第一个位掠过的数量
+        //第二个为每页查询的数量
+        int skipCount = (pageNo -1) *pageSize;
+
+        //打包成一个map
+        //vo，是给前端传送数据
+        //不是前端给后端
+        Map<String,Object> map =new HashMap<>();
+        map.put("fullname",fullname);
+        map.put("state",state);
+        map.put("source",source);
+        map.put("company",company);
+        map.put("mphone",mphone);
+        map.put("phone",phone);
+        map.put("owner",owner);
+        map.put("skipCount",skipCount);
+        map.put("pageSize",pageSize);
+
+        ClueService cs = (ClueService) ServiceFactory.getService(new ClueServiceImpl());
+
+        PaginationVO<Clue> pageList= cs.pageList(map);
+
+        PrintJson.printJsonObj(response,pageList);
+
+
 
     }
 

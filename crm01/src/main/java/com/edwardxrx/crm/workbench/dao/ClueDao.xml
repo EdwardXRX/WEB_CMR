@@ -115,6 +115,95 @@
 		where
 		id= #{clueId}
 	</delete>
+
+	<select id="getTotalByCondition" resultType="int">
+		select count(*)
+		from tbl_clue c
+		join tbl_user u
+		on c.owner = u.id
+
+		<where>
+			<if test="fullname != null and fullname != ''">
+				c.fullname like '%' #{fullname} '%'
+			</if>
+
+			<if test="owner != null and owner != ''">
+				and u.name like '%' #{owner}'%'
+			</if>
+
+			<if test="company != null and company != ''">
+				and c.company like '%' #{company}'%'
+			</if>
+
+			<if test="state != null and state != ''">
+				and c.state like '%' #{state}'%'
+			</if>
+
+			<if test="source != null and source != ''">
+				and c.source like '%' #{source}'%'
+			</if>
+
+			<if test="phone != null and phone != ''">
+				and c.phone like '%' #{phone}'%'
+			</if>
+
+			<if test="mphone != null and mphone != ''">
+				and c.mphone like '%' #{mphone}'%'
+			</if>
+
+
+		</where>
+	</select>
+
+	<select id="getClueListByCondition" resultType="Clue">
+		select
+        c.id,
+        c.fullname,
+        u.name as owner,
+        c.source,
+        c.state,
+        c.mphone,
+        c.phone,
+        c.company
+        from tbl_clue c
+        join tbl_user u
+        on c.owner = u.id
+
+		<where>
+			<if test="fullname != null and fullname != ''">
+				c.fullname like CONCAT('%',#{fullname},'%')
+			</if>
+
+			<if test="owner != null and owner != ''">
+				and u.name like CONCAT('%',#{owner},'%')
+			</if>
+
+			<if test="company != null and company != ''">
+				and c.company like CONCAT('%',#{company},'%')
+			</if>
+
+			<if test="state != null and state != ''">
+				and c.state like CONCAT('%',#{state},'%')
+			</if>
+
+			<if test="source != null and source != ''">
+				and c.source like CONCAT('%',#{source},'%')
+			</if>
+
+			<if test="phone != null and phone != ''">
+				and c.phone like CONCAT('%',#{phone},'%')
+			</if>
+
+			<if test="mphone != null and mphone != ''">
+				and c.mphone like CONCAT('%',#{mphone},'%')
+			</if>
+
+
+		</where>
+
+		limit #{skipCount},#{pageSize}
+
+	</select>
 	
 	
   	

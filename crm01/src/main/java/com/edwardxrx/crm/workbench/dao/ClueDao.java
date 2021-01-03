@@ -19,4 +19,8 @@ public interface ClueDao {
     Clue getById(String clueId);
 
     int delete(String clueId);
+
+    int getTotalByCondition(Map<String, Object> map);
+
+    List<Clue> getClueListByCondition(Map<String, Object> map);
 }

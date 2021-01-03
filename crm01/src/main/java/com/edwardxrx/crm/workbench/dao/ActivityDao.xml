@@ -33,7 +33,6 @@
 
     <select id="getActivityListByCondition" resultType="Activity">
         select
-
         a.id,
         a.name,
         u.name as owner,

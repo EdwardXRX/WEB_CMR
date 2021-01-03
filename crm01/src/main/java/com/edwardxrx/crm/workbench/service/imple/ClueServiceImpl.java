@@ -4,6 +4,7 @@ import com.edwardxrx.crm.settings.dao.UserDao;
 import com.edwardxrx.crm.utils.DateTimeUtil;
 import com.edwardxrx.crm.utils.SqlSessionUtil;
 import com.edwardxrx.crm.utils.UUIDUtil;
+import com.edwardxrx.crm.vo.PaginationVO;
 import com.edwardxrx.crm.workbench.dao.*;
 import com.edwardxrx.crm.workbench.domain.*;
 import com.edwardxrx.crm.workbench.service.ClueService;
@@ -257,6 +258,30 @@ public class ClueServiceImpl implements ClueService {
 
         return flag;
 
+
+    }
+
+    @Override
+    public PaginationVO<Clue> pageList(Map<String, Object> map) {
+
+        System.out.println("进入到ClueServiceImpl文件中得pageList中");
+
+        //取得total
+        int total = clueDao.getTotalByCondition(map);
+
+        System.out.println("total:" + total);
+
+        //取得dataList
+        List<Clue> dataList = clueDao.getClueListByCondition(map);
+
+        //封装成vo
+        PaginationVO<Clue> vo = new PaginationVO<Clue>();
+
+        vo.setTotal(total);
+        vo.setDataList(dataList);
+
+        //返回
+        return vo;
 
     }
 }
